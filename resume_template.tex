@@ -1,0 +1,281 @@
+\documentclass[a4paper,11pt]{article}
+
+% Package imports
+\usepackage{latexsym}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{ragged2e}
+\usepackage[empty]{fullpage}
+\usepackage{wrapfig}
+\usepackage{lipsum}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{marvosym}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{cfr-lm}
+\usepackage[T1]{fontenc}
+\usepackage{fontawesome5}
+
+% Color definitions
+\definecolor{darkblue}{RGB}{0,0,139}
+
+% Page layout
+\setlength{\multicolsep}{0pt}
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\geometry{left=1.4cm, top=0.8cm, right=1.2cm, bottom=1cm}
+\setlength{\footskip}{5pt} % Addressing fancyhdr warning
+
+% Hyperlink setup (moved after fancyhdr to address warning)
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=darkblue,
+    filecolor=darkblue,
+    urlcolor=darkblue,
+}
+
+% URL style
+\urlstyle{same}
+
+% Text alignment
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
+
+% Custom commands
+\newcommand{\resumeExperienceHeader}[2]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textbf{\textit{\footnotesize{#2}}}
+    \end{tabular*}
+    \vspace{-2.2mm}
+}
+
+\newcommand{\resumeExperience}[3]{
+\vspace{1.4mm}
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textit{#1} & \textit{\footnotesize{#2}} | \textit{\footnotesize{#3}}
+    \end{tabular*}
+    \vspace{-2.2mm}
+}
+
+\newcommand{\resumeEducationHeader}[2]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+	\textbf{#1} & \textbf{\textit{\footnotesize{#2}}}
+    \end{tabular*}
+    \vspace{-2.2mm}
+}
+
+\newcommand{\resumeEducationDegree}[2]{
+\vspace{1.4mm}
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textit{#1} & \textit{\footnotesize{#2}}
+    \end{tabular*}
+    \vspace{-2.2mm}
+}
+
+\newcommand{\heading}[4]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#4}} \\
+        \textit{\footnotesize{#3}} &  \footnotesize{#2}\\
+    \end{tabular*}
+    \vspace{-2.2mm}
+}
+
+\newcommand{\resumeProject}[4]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#3}} \\
+        \footnotesize{\textit{#2}} & \footnotesize{#4}
+    \end{tabular*}
+    \vspace{-2.2mm}
+}
+
+\renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand{\labelitemii}{$\vcenter{\hbox{\tiny$\circ$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,labelsep=1mm]}
+\newcommand{\resumeHeadingSkillStart}{\begin{itemize}[leftmargin=*,itemsep=1.7mm, rightmargin=2ex]}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=*,labelsep=1mm,itemsep=0mm]}
+
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{2mm}}
+\newcommand{\resumeHeadingSkillEnd}{\end{itemize}\vspace{-2mm}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2mm}}
+\newcommand{\cvsection}[1]{%
+\vspace{2mm}
+\begin{tcolorbox}
+    \textbf{\large #1}
+\end{tcolorbox}
+    \vspace{-4mm}
+}
+
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}%
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}%
+\newcolumntype{C}{>{\centering\arraybackslash}X}%
+
+% Commands for icon sizing and positioning
+\newcommand{\socialicon}[1]{\raisebox{-0.05em}{\resizebox{!}{1em}{#1}}}
+
+% Font options
+\newcommand{\headerfonti}{\fontfamily{phv}\selectfont} % Helvetica-like (similar to Arial/Calibri)
+\newcommand{\headerfontii}{\fontfamily{ptm}\selectfont} % Times-like (similar to Times New Roman)
+\newcommand{\headerfontiii}{\fontfamily{ppl}\selectfont} % Palatino (elegant serif)
+\newcommand{\headerfontiv}{\fontfamily{pbk}\selectfont} % Bookman (readable serif)
+\newcommand{\headerfontv}{\fontfamily{pag}\selectfont} % Avant Garde-like (similar to Trebuchet MS)
+\newcommand{\headerfontvi}{\fontfamily{cmss}\selectfont} % Computer Modern Sans Serif
+\newcommand{\headerfontvii}{\fontfamily{qhv}\selectfont} % Quasi-Helvetica (another Arial/Calibri alternative)
+\newcommand{\headerfontviii}{\fontfamily{qpl}\selectfont} % Quasi-Palatino (another elegant serif option)
+\newcommand{\headerfontix}{\fontfamily{qtm}\selectfont} % Quasi-Times (another Times New Roman alternative)
+\newcommand{\headerfontx}{\fontfamily{bch}\selectfont} % Charter (clean serif font)
+
+\begin{document}
+\headerfontiii
+
+% Header
+\begin{center}
+	{\Huge\textbf{Nicholas DeGroot}}
+\end{center}
+\vspace{-6mm}
+
+\begin{center}
+	\small{
+		\phonenumber | \href{mailto:nick@nickthegroot.com}{nick@nickthegroot.com} |
+		\href{https://nickthegroot.com/}{nickthegroot.com}
+	}
+\end{center}
+\vspace{-8mm}
+
+\begin{center}
+	\small{
+		\socialicon{\faLinkedin} \href{https://linkedin.com/in/nickthegroot}{/in/nickthegroot} |
+		\socialicon{\faGithub} \href{https://github.com/your-username}{@nickthegroot}
+	}
+\end{center}
+
+\vspace{-6mm}
+
+\section{\textbf{Abstract}}
+\vspace{1mm}
+\small{
+  An experienced software engineer with a passion for the craft. I thrive at the edge of technology and find joy in tackling the world's toughest problems. Currently seeking high-impact positions in early-stage startups with innnovative ideas.
+}
+\vspace{-2mm}
+
+
+\section{\textbf{Experience}}
+\vspace{-0.4mm}
+\resumeSubHeadingListStart
+
+\resumeExperienceHeader
+{Digs [\href{https://digs.com}{\faIcon{globe}}]}{Oct 2022 - Current}
+
+\resumeExperience{Senior Software Engineer}{Vancouver, WA}{May 2023 - Current}
+\resumeItemListStart
+\item Launched \href{https://support.digs.com/hc/en-us/articles/28749420058011-Release-Notes-Early-Access-to-3D-Dollhouse-askDigs-just-got-smarter-August-24}{Dollhouse}, enabling 3D visualizations of 2D blueprints in the browser
+\item Launched \href{https://support.digs.com/hc/en-us/articles/25318506349595-Release-Notes-AskDigs-Notification-Center-April-May-24}{AskDigs}, enabling chat-based questions against construction documents
+\item Wrote a custom react renderer for interacting with the \verb|fabric| HTML5 canvas library
+\resumeItemListEnd
+
+\resumeExperience{Computer Vision Consultant}{Remote}{Oct 2022 - May 2023}
+\resumeItemListStart
+\item Designed and trained custom PyTorch CV models for blueprint structure segmentation
+\item Fine-tuned existing multi-modal models for accurate room name prediction
+\item Developed an automated infrastructure-as-code based CI pipeline to deploy through multiple cloud providers
+\resumeItemListEnd
+
+\resumeExperienceHeader
+{Streem [\href{https://streem.com}{\faIcon{globe}}]}{Jan 2019 - Sep 2022}
+
+\resumeExperience{L3 Software Engineer}{Remote}{Apr 2022 - Sep 2022}
+\resumeItemListStart
+\item Migrated internal analytics storage to Snowflake using a custom ETL pipeline
+\item Deployed Looker analytics with custom data models for business reporting and enterprise exports
+\resumeItemListEnd
+
+\resumeExperience{L2 Software Engineer}{Remote}{Jun 2021 - Apr 2022}
+\resumeItemListStart
+\item Developed AR-backed video calls, allowing users to take measurements remotely
+\item Designed web-based algorithms for common CV tasks such as edge detection
+\resumeItemListEnd
+
+\resumeExperience{Software Engineer Consultant}{Remote}{Oct 2019 - Jun 2021}
+\resumeItemListStart
+\item Developed an embeddable version of a React app for use in external CRMs
+\item Created permission-backed endpoints for a Kotlin server
+\resumeItemListEnd
+
+\resumeExperience{Software Engineer Intern}{Portland, OR}{Jan 2019 - Sep 2019}
+\resumeItemListStart
+\item Developed internal tools for common administrative tasks, such as adding and editing users
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+\vspace{-6mm}
+
+\section{\textbf{Education}}
+\vspace{-0.4mm}
+\resumeSubHeadingListStart
+
+\resumeEducationHeader{University of California, San Diego [\href{https://ucsd.edu}{\faIcon{globe}}]}{GPA: 3.983}
+\resumeEducationDegree{B.S. Data Science}{GPA: 3.980}
+\resumeEducationDegree{B.S. Cognitive Science (spec. Neural Computation / Machine Learning)}{GPA: 4.000}
+\resumeItemListStart
+\item Summa Cum Laude
+\resumeItemListEnd
+
+\resumeEducationHeader{Lake Oswego High School [\href{https://lohs.losdschools.org/}{\faIcon{globe}}]}{U/W GPA: 3.88}
+\resumeEducationDegree{High School Diploma}{W GPA: 4.12}
+\resumeItemListStart
+\item National Merit Finalist
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+\vspace{-6mm}
+
+\section{\textbf{Projects}}
+\vspace{-0.4mm}
+\resumeSubHeadingListStart
+
+\resumeProject
+  {Personalized Recipe Recommendation Using Heterogeneous Graphs}
+  {Tools: PyTorch, Graph DBs, Figma}
+  {March 2023}
+  {{}[\href{https://github.com/nickthegroot/recipe-recommendation}{\textcolor{darkblue}{\faGithub}}]}
+
+\resumeProject
+  {Course Arrival}
+  {Tools: React, PostgreSQL, Go, Pandas}
+  {February 2021}
+  {{}[\href{https://github.com/nickthegroot/Course-Arrival}{\textcolor{darkblue}{\faGithub}}]}
+\resumeItemListStart
+  \item Winner of SD Hacks 2021 Wolfram Alpha \& Best Use of CockroachDB prizes
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+\vspace{-6mm}
+
+\section{\textbf{Patents}}
+\vspace{0.2mm}
+\small{
+	\begin{enumerate}[leftmargin=*, labelsep=0.5em, align=left, widest={[\textbf{S.1}]}, itemindent=0em, label={\textbf{[\arabic*]}]}]
+		\item[\textbf{[P.1]}] Pavan K. Kamaraju, Nicholas DeGroot (2024). \href{https://patentcenter.uspto.gov/applications/17520210}{\textbf{CONTEXT AWARE MEASUREMENT}}. Patent Office, Patent No. 12,154,289. Registration Date: 11/05/2021, Grant Date: 11/26/2024, Publication Date: 05/11/2023.
+		\item[\textbf{[P.2]}] Sean M. Adkinson, Nicholas DeGroot, et al. (2023). \href{https://patentcenter.uspto.gov/applications/17090281}{\textbf{REMOTE MEASUREMENTS FROM A LIVE VIDEO STREAM}}. Patent Office, Patent No. 11,830,213. Registration Date: 11/05/2020, Grant Date: 11/28/2023, Publication Date: 11/28/2023.
+	\end{enumerate}
+}
+
+\end{document}
