@@ -154,7 +154,8 @@
 
 \begin{center}
 	\small{
-		\phonenumber | \href{mailto:nick@nickthegroot.com}{nick@nickthegroot.com} |
+    \phonenumber\hspace{0.1em} |
+    \href{mailto:nick@nickthegroot.com}{nick@nickthegroot.com} |
 		\href{https://nickthegroot.com/}{nickthegroot.com}
 	}
 \end{center}
@@ -163,7 +164,7 @@
 \begin{center}
 	\small{
 		\socialicon{\faLinkedin} \href{https://linkedin.com/in/nickthegroot}{/in/nickthegroot} |
-		\socialicon{\faGithub} \href{https://github.com/your-username}{@nickthegroot}
+		\socialicon{\faGithub} \href{https://github.com/nickthegroot}{@nickthegroot}
 	}
 \end{center}
 
@@ -172,7 +173,7 @@
 \section{\textbf{Abstract}}
 \vspace{1mm}
 \small{
-  An experienced software engineer with a passion for the craft. I thrive at the edge of technology and find joy in tackling the world's toughest problems. Currently seeking high-impact positions in early-stage startups with innnovative ideas.
+  An experienced AI engineer and full-stack developer with a track record of shipping machine learning products from research to deployment. I thrive at the edge of technology and find joy in tackling the world's toughest problems. Currently seeking high-impact positions in early-stage startups with innnovative ideas.
 }
 \vspace{-2mm}
 
@@ -186,14 +187,14 @@
 
 \resumeExperience{Senior Software Engineer}{Vancouver, WA}{May 2023 - Current}
 \resumeItemListStart
-\item Launched \href{https://support.digs.com/hc/en-us/articles/28749420058011-Release-Notes-Early-Access-to-3D-Dollhouse-askDigs-just-got-smarter-August-24}{Dollhouse}, enabling 3D visualizations of 2D blueprints in the browser
-\item Launched \href{https://support.digs.com/hc/en-us/articles/25318506349595-Release-Notes-AskDigs-Notification-Center-April-May-24}{AskDigs}, enabling chat-based questions against construction documents
-\item Wrote a custom react renderer for interacting with the \verb|fabric| HTML5 canvas library
+\item Launched \href{https://digs.com/digscanvas#DigsCanvasFloorplanstoLife}{Dollhouse}, enabling 3D visualizations of 2D blueprints in the browser
+\item Launched \href{https://digs.com/digscloud#DigsCloudAskDigs}{AskDigs}, enabling Q\&A against construction documents using a novel RAG architecture
+\item Merged fixes for several upstream open-source libraries, including HuggingFace Transformers \& Drei
 \resumeItemListEnd
 
 \resumeExperience{Computer Vision Consultant}{Remote}{Oct 2022 - May 2023}
 \resumeItemListStart
-\item Designed and trained custom PyTorch CV models for blueprint structure segmentation
+\item Designed and trained custom PyTorch image models for blueprint segmentation (rooms, structures, etc.)
 \item Fine-tuned existing multi-modal models for accurate room name prediction
 \item Developed an automated infrastructure-as-code based CI pipeline to deploy through multiple cloud providers
 \resumeItemListEnd
@@ -209,14 +210,14 @@
 
 \resumeExperience{L2 Software Engineer}{Remote}{Jun 2021 - Apr 2022}
 \resumeItemListStart
-\item Developed AR-backed video calls, allowing users to take measurements remotely
-\item Designed web-based algorithms for common CV tasks such as edge detection
+\item Developed AR-backed video calls, allowing technicians to easily take measurements remotely
+\item Designed browser-based algorithms for common CV tasks such as edge detection
 \resumeItemListEnd
 
 \resumeExperience{Software Engineer Consultant}{Remote}{Oct 2019 - Jun 2021}
 \resumeItemListStart
-\item Developed an embeddable version of a React app for use in external CRMs
-\item Created permission-backed endpoints for a Kotlin server
+\item Trained a custom TensorFlow model to find \& label model numbers in images of appliances
+\item Created a lightweight embeddable version of a React app for use in external CRMs
 \resumeItemListEnd
 
 \resumeExperience{Software Engineer Intern}{Portland, OR}{Jan 2019 - Sep 2019}
@@ -235,13 +236,22 @@
 \resumeEducationDegree{B.S. Data Science}{GPA: 3.980}
 \resumeEducationDegree{B.S. Cognitive Science (spec. Neural Computation / Machine Learning)}{GPA: 4.000}
 \resumeItemListStart
-\item Summa Cum Laude
+\item Summa Cum Laude (Top 2\%)
 \resumeItemListEnd
 
-\resumeEducationHeader{Lake Oswego High School [\href{https://lohs.losdschools.org/}{\faIcon{globe}}]}{U/W GPA: 3.88}
-\resumeEducationDegree{High School Diploma}{W GPA: 4.12}
+\resumeSubHeadingListEnd
+\vspace{-6mm}
+
+\section{\textbf{Tools \& Technologies}}
+\vspace{-0.4mm}
+\resumeSubHeadingListStart
+
 \resumeItemListStart
-\item National Merit Finalist
+
+\item \textbf{ML/AI} - PyTorch, TensorFlow, HuggingFace, OpenCV, Pandas, Dask, Shapely, Jupyter Notebook
+\item \textbf{Data/Infra} - AWS, GCP, Azure, Docker, Terraform/CDKTF, GitHub Actions, PostgreSQL, Snowflake
+\item \textbf{Languages} - Python, TypeScript, JavaScript, Swift, Kotlin
+
 \resumeItemListEnd
 
 \resumeSubHeadingListEnd
@@ -255,16 +265,25 @@
   {Personalized Recipe Recommendation Using Heterogeneous Graphs}
   {Tools: PyTorch, Graph DBs, Figma}
   {March 2023}
-  {{}[\href{https://github.com/nickthegroot/recipe-recommendation}{\textcolor{darkblue}{\faGithub}}]}
+  {{}[\href{https://recipe.nickthegroot.com/}{\faIcon{globe}}][\href{https://github.com/nickthegroot/recipe-recommendation}{\textcolor{darkblue}{\faGithub}}]}
 
 \resumeProject
   {Course Arrival}
   {Tools: React, PostgreSQL, Go, Pandas}
   {February 2021}
-  {{}[\href{https://github.com/nickthegroot/Course-Arrival}{\textcolor{darkblue}{\faGithub}}]}
+  {{}[\href{https://devpost.com/software/course-arrival}{\faIcon{globe}}][\href{https://github.com/nickthegroot/Course-Arrival}{\textcolor{darkblue}{\faGithub}}]}
 \resumeItemListStart
   \item Winner of SD Hacks 2021 Wolfram Alpha \& Best Use of CockroachDB prizes
 \resumeItemListEnd
+
+\vspace{-1.5mm}
+
+\resumeProject
+  {Homerooms}
+  {Tools: React Native, Expo, Firebase}
+  {July 2018}
+  {{}[\href{https://github.com/nickthegroot/Homerooms}{\textcolor{darkblue}{\faGithub}}]}
+
 
 \resumeSubHeadingListEnd
 \vspace{-6mm}
